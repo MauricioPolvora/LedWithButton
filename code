@@ -1,0 +1,51 @@
+int ButtonValue =0;
+
+int LedRed =2;
+int LedYellow =4;
+int LedBlue =5;
+int Button =3;
+
+void setup() {
+
+  pinMode (Button,INPUT);
+  pinMode (LedRed,OUTPUT);
+  pinMode (LedYellow, OUTPUT);
+  pinMode (LedBlue, OUTPUT);
+  
+}
+ void loop () {
+
+  ButtonValue = digitalRead (Button);
+
+  if (ButtonValue == 1){
+
+   digitalWrite (LedRed, HIGH);
+   delay(500);
+   digitalWrite (LedYellow, HIGH);
+   delay(500);
+   digitalWrite (LedBlue, HIGH);
+   delay(500);
+   digitalWrite (LedRed, LOW);
+   digitalWrite (LedYellow, LOW);
+   digitalWrite (LedBlue, LOW);
+   digitalWrite (LedRed, HIGH);
+   delay(150);
+   digitalWrite (LedRed, LOW);
+   digitalWrite (LedYellow, HIGH);
+   delay(150); 
+   digitalWrite (LedYellow, LOW);
+   digitalWrite (LedBlue, HIGH);
+   delay(150);
+   digitalWrite (LedBlue, LOW);
+
+   
+  }
+
+  else {
+
+   digitalWrite (LedRed, LOW);
+   digitalWrite (LedYellow, LOW);
+   digitalWrite (LedBlue, LOW);
+   
+  }
+ }
